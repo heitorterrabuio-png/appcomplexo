@@ -65,7 +65,8 @@ export default function Dashboard() {
 
             <p>🚢 Navio: {e.navio}</p>
             <p>👨‍✈️ Capitão: {e.capitao}</p>
-            <p>Status: {e.status}</p>
+            <p>⏳Data Inicio: {e.data_inicio}</p>
+            <p>📶Status: {e.status}</p>
 
             <div className="flex gap-2 mt-3">
 

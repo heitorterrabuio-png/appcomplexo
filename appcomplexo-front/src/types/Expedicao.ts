@@ -3,4 +3,6 @@ export type Expedicao = {
   nome: string
   navio: string
   capitao: string
+  status: string
+  data_inicio: string
 }
