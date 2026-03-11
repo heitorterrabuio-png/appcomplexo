@@ -1,0 +1,27 @@
+import (
+	"database/sql"
+	"fmt"
+	"log"
+
+	_ "github.com/glebarez/go-sqlite"
+)
+
+func main() {
+	// 1. Isso CRIA o arquivo 'meubanco.db' se ele não existir
+	db, err := sql.Open("sqlite", "meubanco.db")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+
+	// 2. Criar uma tabela de teste
+	query := `CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY, nome TEXT);`
+	_, err = db.Exec(query)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("Banco de dados criado e tabela pronta!")
+}
+
+//teste de banco de dados
